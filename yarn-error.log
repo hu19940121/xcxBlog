@@ -1,0 +1,85 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /Applications/mpv.app/Contents/MacOS:/Users/kaier/Library/Android/sdk/platform-tools:/Users/kaier/Documents/flutter/bin/cache/dart-sdk/bin:/Users/kaier/Documents/flutter/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/kaier/mingling
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  14.17.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: http://26.196.217.222/repository/npm-public/@babel%2fruntime: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/lib/cli.js:141408:19)
+      at listOnTimeout (internal/timers.js:557:17)
+      at processTimers (internal/timers.js:500:7)
+
+npm manifest: 
+  {
+    "name": "blog",
+    "version": "1.0.0",
+    "private": true,
+    "description": "小程序blog",
+    "templateInfo": {
+      "name": "vuex",
+      "typescript": false,
+      "css": "sass"
+    },
+    "scripts": {
+      "build:weapp": "taro build --type weapp",
+      "build:swan": "taro build --type swan",
+      "build:alipay": "taro build --type alipay",
+      "build:tt": "taro build --type tt",
+      "build:h5": "taro build --type h5",
+      "build:rn": "taro build --type rn",
+      "build:qq": "taro build --type qq",
+      "build:quickapp": "taro build --type quickapp",
+      "dev:weapp": "npm run build:weapp -- --watch",
+      "dev:swan": "npm run build:swan -- --watch",
+      "dev:alipay": "npm run build:alipay -- --watch",
+      "dev:tt": "npm run build:tt -- --watch",
+      "dev:h5": "npm run build:h5 -- --watch",
+      "dev:rn": "npm run build:rn -- --watch",
+      "dev:qq": "npm run build:qq -- --watch",
+      "dev:quickapp": "npm run build:quickapp -- --watch"
+    },
+    "browserslist": [
+      "last 3 versions",
+      "Android >= 4.1",
+      "ios >= 8"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+      "@babel/runtime": "^7.7.7",
+      "@tarojs/runtime": "3.3.12",
+      "@tarojs/taro": "3.3.12",
+      "@tarojs/components": "3.3.12",
+      "vuex": "^3.0.0",
+      "vue-template-compiler": "^2.5.0",
+      "vue": "^2.5.0"
+    },
+    "devDependencies": {
+      "@types/webpack-env": "^1.13.6",
+      "@tarojs/mini-runner": "3.3.12",
+      "@tarojs/webpack-runner": "3.3.12",
+      "@babel/core": "^7.8.0",
+      "babel-preset-taro": "3.3.12",
+      "vue-loader": "^15.9.2",
+      "eslint-plugin-vue": "^6.x",
+      "eslint-config-taro": "3.3.12",
+      "eslint": "^6.8.0",
+      "stylelint": "9.3.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

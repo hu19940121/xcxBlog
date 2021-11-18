@@ -1,0 +1,20 @@
+
+
+.h5-span {
+  display: inline;
+}
+
+.h5-button,
+.h5-input {
+  display: inline-block;
+}
+
+.h5-button::after {
+  border: none;
+}
+
+.van-button--hairline::after {
+  transform-origin: unset;
+  width: unset;
+  height: unset;
+}
