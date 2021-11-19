@@ -47,4 +47,12 @@ export function getComments(data) {
   })
 }
 
+export function getBanner(data) {
+  return request({
+    url: 'https://kaier001.com/api/v2/manualBanner/list',
+    method: 'get',
+    data
+  })
+}
+
 

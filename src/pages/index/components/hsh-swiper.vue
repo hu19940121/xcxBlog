@@ -9,10 +9,10 @@
         :indicator-dots="true"
         :autoplay="true"
       >
-        <swiper-item class="swiper-item">
+        <swiper-item class="swiper-item"  v-for="(banner,index) in bannerList"  :key="index">
           <img
             class=""
-            src="https://resource.kaier001.com/bea1.jpg"
+            :src="banner.image"
             alt=""
           >
         </swiper-item>
@@ -22,8 +22,13 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
-
+    computed: {
+      ...mapState('settings',{
+        bannerList: 'bannerList'
+      })
+    },
   }
 </script>
 

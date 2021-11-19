@@ -23,13 +23,17 @@
             title="热门文章"
           /> -->
         </van-tabs>
-        <div class="article-list">
+        <div class="article-list margin-top-sm">
           <template v-for="(item,index) in articleList">
             <article-item
               :key="index"
               :info="item"
+              :num="produceNum(index + 1, 30)"
             />
           </template>
+          <p v-show="isEnd" class="bottom-tip text-center padding-sm">
+            - 已经到底了 -
+          </p>
         </div>
       </div>
     </div>
@@ -42,6 +46,7 @@
   import articleItem from '@/components/article-item'
   import { getArticleList } from '@/api/index'
   import { mapState, mapActions, mapMutations } from 'vuex'
+  import { produceNum } from '@/utils'
   const DEFAULT_PAGESIZE = 5
   const DEFAULT_PAGE = 1
 
@@ -73,7 +78,7 @@
       this.getSetting()
       this.getCate()
       this.getComments()
-
+      this.getBanner()
       wx.showShareMenu({
         // withShareTicket: true,
         menus: ['shareAppMessage', 'shareTimeline']
@@ -84,12 +89,15 @@
       this.getArticleList()
     },
     onPullDownRefresh() {
+      this.getBanner()
       this.resetParams()
       this.getArticleList()
     },
     methods: {
+      produceNum,
       ...mapActions('settings', {
-        getSetting: 'getSetting'
+        getSetting: 'getSetting',
+        getBanner: 'getBanner'
       }),
       ...mapActions('article', {
         getCate: 'getCate',
@@ -102,10 +110,14 @@
         if (this.isEnd) {
           return false
         }
+        this.$Taro.showLoading({
+          title: '加载中',
+        })
         const params = {
           ...this.pageInfo
         }
         getArticleList({...params }).then((res)=>{
+          this.$Taro.hideLoading()
           this.CHANGE_ARTICLE_COUNT(res.data.count)
           this.$Taro.stopPullDownRefresh()
           if (res.data.dataSet.length === 0 ) {
@@ -162,6 +174,9 @@ page {
       border-radius: $radius-wrap;
       padding: 30px;
       .article-list{
+        .bottom-tip {
+          color: $minor;
+        }
         /* .article-item {
           padding: 30px 0;
           border-bottom: 2px solid $classC;

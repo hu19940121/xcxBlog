@@ -152,6 +152,7 @@
         this.$Taro.navigateTo({
           url:`/pages/search/index?filterSlug=${val}&filterType=search`
         })
+        this.keywords = ''
         this.showSearch = false
       },
       clickTag(tagName) {

@@ -35,10 +35,10 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@tarojs/components": "3.3.12",
-    "@tarojs/plugin-html": "^3.3.12",
-    "@tarojs/runtime": "3.3.12",
-    "@tarojs/taro": "3.3.12",
+    "@tarojs/components": "3.3.14",
+    "@tarojs/plugin-html": "^3.3.14",
+    "@tarojs/runtime": "3.3.14",
+    "@tarojs/taro": "3.3.14",
     "vant": "^2.12.31",
     "vue": "^2.5.0",
     "vue-template-compiler": "^2.5.0",
@@ -46,13 +46,13 @@
   },
   "devDependencies": {
     "@types/webpack-env": "^1.13.6",
-    "@tarojs/mini-runner": "3.3.12",
-    "@tarojs/webpack-runner": "3.3.12",
+    "@tarojs/mini-runner": "3.3.14",
+    "@tarojs/webpack-runner": "3.3.14",
     "@babel/core": "^7.8.0",
-    "babel-preset-taro": "3.3.12",
+    "babel-preset-taro": "3.3.14",
     "vue-loader": "^15.9.2",
     "eslint-plugin-vue": "^6.x",
-    "eslint-config-taro": "3.3.12",
+    "eslint-config-taro": "3.3.14",
     "eslint": "^6.8.0",
     "stylelint": "9.3.0"
   }

@@ -4,9 +4,14 @@
       class="article-item flex"
       @click="linkToDetail(info)"
     >
-      <img
+      <!-- <img
         class="banner"
         :src="`https://cdn.jsdelivr.net/npm/typecho-joe-next@6.0.0/assets/thumb/${getRandomInt(1,20)}.jpg`"
+        alt=""
+      > -->
+      <img
+        class="banner"
+        :src="`https://cdn.jsdelivr.net/npm/typecho-joe-next@6.0.0/assets/thumb/${num}.jpg`"
         alt=""
       >
       <div class="article-info padding-left-sm padding-tb-xs flex flex-direction justify-between">
@@ -27,6 +32,14 @@
         type: Object,
         default: ()=>({})
       },
+      num:{
+        type: Number,
+        default: 1
+      }
+    },
+    data() {
+      return {
+      }
     },
     methods: {
       linkToDetail(article) {
@@ -40,7 +53,8 @@
         }
         min = parseInt(min);
         max = parseInt(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        const num = Math.floor(Math.random() * (max - min + 1)) + min;
+        return num
       }
     },
   }
@@ -49,7 +63,7 @@
 <style lang="scss">
 .article-item {
   padding: 30px 0;
-  border-bottom: 2px solid $classC;
+  border-top: 2px solid $classC;
   .banner {
     width: 240px;
     height: 160px;
