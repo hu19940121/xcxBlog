@@ -4,11 +4,6 @@
       class="article-item flex"
       @click="linkToDetail(info)"
     >
-      <!-- <img
-        class="banner"
-        :src="`https://cdn.jsdelivr.net/npm/typecho-joe-next@6.0.0/assets/thumb/${getRandomInt(1,20)}.jpg`"
-        alt=""
-      > -->
       <img
         class="banner"
         :src="`https://cdn.jsdelivr.net/npm/typecho-joe-next@6.0.0/assets/thumb/${num}.jpg`"
@@ -18,7 +13,6 @@
         <p>{{ info.title }}</p>
         <div class="flex justify-between time">
           <span>{{ info.year }}年{{ info.month }}月{{ info.day }}日</span>
-          <!-- <span>1阅读</span> -->
         </div>
       </div>
     </div>
@@ -70,6 +64,7 @@
     border-radius: $radius-inner;
   }
   .article-info {
+    flex: 1;
     .time {
       font-size: 26px;
       color: $minor;
